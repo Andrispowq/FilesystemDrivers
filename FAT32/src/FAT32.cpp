@@ -21,7 +21,8 @@ FAT32::FAT32(const std::string& file)
 	{
 		for (auto clus : clustersToRead)
 		{
-			std::vector<DirEntry> rootDir = driver->GetDirectories(clus, 0, false);
+			//Ain't no need for the volume's identifier (a FILE_VOLUME_ID entry on root)
+			std::vector<DirEntry> rootDir = driver->GetDirectories(clus, FILE_VOLUME_ID, false);
 
 			for (size_t i = 0; i < rootDir.size(); i++)
 			{

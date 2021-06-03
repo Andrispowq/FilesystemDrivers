@@ -10,25 +10,6 @@ int main()
 	FAT32_FolderStructure* root = fat32.GetRoot();
 	FAT32Driver* driver = fat32.GetDriver();
 
-	std::ifstream f("res/HackOS_FAT.img", std::ios::binary);
-	uint8_t buff[0x2000];
-	f.read((char*)buff, 0x2000);
-
-	FAT32_OpenFile* our_file = fat32.OpenFile("~/EFI/This is a file.file");
-	if (!our_file)
-	{
-		our_file = fat32.CreateFile("~/EFI", "This is a file.file", FILE_SYSTEM | FILE_ARCHIVE, 0x1000);
-	}
-	else
-	{
-		fat32.DeleteFile(our_file);
-
-		our_file = fat32.CreateFile("~/EFI", "This is a file.file", FILE_SYSTEM | FILE_ARCHIVE, 0x1000);
-	}
-
-	fat32.WriteFile(our_file, buff, 0x2000);
-	fat32.CloseFile(our_file);
-
 	FAT32_OpenFile* file = nullptr;
 	while (true)
 	{

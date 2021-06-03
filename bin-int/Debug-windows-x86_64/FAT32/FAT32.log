@@ -1,0 +1,4 @@
+﻿  FAT32.cpp
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32.cpp(157,40): warning C4244: 'argument': conversion from 'uint64_t' to 'uint32_t', possible loss of data
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32.cpp(158,27): warning C4244: '=': conversion from 'uint64_t' to 'uint32_t', possible loss of data
+  FAT32.vcxproj -> F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\bin\Debug-windows-x86_64\FAT32\FAT32.lib
