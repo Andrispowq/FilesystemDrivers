@@ -1,11 +1,13 @@
 #include "FAT32.h"
-#include "ext2defs.h"
+#include "ext2driver.h"
 
 #include <fstream>
 #include <string>
 
 int main()
 {
+	ext2driver ext2("../Ext2/res/ext2.img");
+
 	FAT32 fat32("../FAT32/res/HackOS.img");
 	FAT32_FolderStructure* root = fat32.GetRoot();
 	FAT32Driver* driver = fat32.GetDriver();

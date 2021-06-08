@@ -1,1 +1,4 @@
-﻿  Test.vcxproj -> F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\bin\Debug-windows-x86_64\Test\Test.exe
+﻿  Source.cpp
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\Ext2\src\ext2defs.h(155,1): warning C4200: nonstandard extension used: zero-sized array in struct/union
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\Ext2\src\ext2defs.h(155,1): message : This member will be ignored by a defaulted constructor or copy/move assignment operator
+  Test.vcxproj -> F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\bin\Debug-windows-x86_64\Test\Test.exe
