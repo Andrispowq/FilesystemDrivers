@@ -161,14 +161,6 @@ PACK(struct directory_entry
 	uint8_t name[];
 });
 
-struct dir_entry
-{
-	uint32_t inode;
-	uint32_t size;
-	uint32_t type_indicator;
-	uint8_t name[128];
-};
-
 enum class type_indicator
 {
 	unkown_type,
@@ -179,6 +171,17 @@ enum class type_indicator
 	FIFO,
 	socket,
 	symlink
+};
+
+struct ext2_DirEntry
+{
+	char name[128];
+
+	uint32_t inode;
+	uint32_t size;
+	uint32_t type_indicator;
+
+	ext2_inode inode_data;
 };
 
 #endif
