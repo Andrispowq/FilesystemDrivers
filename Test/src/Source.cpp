@@ -12,6 +12,8 @@ int main()
 	FAT32_FolderStructure* root = fat32.GetRoot();
 	FAT32Driver* driver = fat32.GetDriver();
 
+	fat32.DeleteFile(fat32.OpenFile("~/USR/FILES/my_songs_file.json"));
+
 	FAT32_OpenFile* file = nullptr;
 	while (true)
 	{
@@ -34,7 +36,44 @@ int main()
 		}
 		else if (in.substr(0, 6) == "touch ")
 		{
-			fat32.CreateFile(fat32.GetCurrentDirectory(), in.substr(6, in.length() - 6), FILE_ARCHIVE, 2048);
+			char str[] = R"("{
+  "playlist1": [
+    {
+      "source": "album:3N7eWDCvfWv34xWNohdHjO",
+      "track": 0,
+      "uri": "4hQ6UGyWQIGJmHSo0J88JW",
+      "name": "Back to you"
+    },
+    {
+      "source": "playlist:37i9dQZF1E8NIqb7ifZ0x5",
+      "track": 0,
+      "uri": "5yP7ZMMAbaZQMfBirBBCen",
+      "name": "Rajosan"
+    },
+    {
+      "source": "album:7p1fX8aUySrBdx4WSYspOu",
+      "track": 2,
+      "uri": "4nVBt6MZDDP6tRVdQTgxJg",
+      "name": "Story of my life"
+    },
+    {
+      "source": "playlist:37i9dQZF1EQncLwOalG3K7",
+      "track": 9,
+      "uri": "41Fflg7qHiVOD6dEPvsCzO",
+      "name": "Worth it"
+    },
+    {
+      "source": "playlist:37i9dQZF1E8BAmzD4F9EWe",
+      "track": 0,
+      "uri": "0Cy7wt6IlRfBPHXXjmZbcP",
+      "name": "Love me like you do"
+    }
+  ]
+}")";
+
+			FAT32_OpenFile* file = fat32.CreateFile(fat32.GetCurrentDirectory(), in.substr(6, in.length() - 6), FILE_ARCHIVE, 2048);
+			fat32.WriteFile(file, str, sizeof(str));
+			fat32.CloseFile(file);
 		}
 		else if (in.substr(0, 3) == "cd ")
 		{
