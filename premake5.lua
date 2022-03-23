@@ -96,6 +96,45 @@ project "Ext2"
         runtime "Release"
         optimize "on"
 
+project "exFAT"
+    location "exFAT"
+    kind "StaticLib"
+    language "C++"
+    cppdialect "C++17"
+    staticruntime "off"
+    
+    targetdir ("bin/" .. outputdir .. "/%{prj.name}")
+    objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
+
+    files
+    {
+        "%{prj.name}/src/**.h",
+        "%{prj.name}/src/**.cpp"
+    }
+
+    defines
+    {
+        "_CRT_SECURE_NO_WARNINGS"
+    }
+
+    includedirs
+    {
+        "%{prj.location}/src"
+    }
+    
+    filter "system:windows"
+        systemversion "latest"
+    
+    filter "configurations:Debug"
+        defines "DEBUG"
+        runtime "Debug"
+        symbols "on"
+    
+    filter "configurations:Release"
+        defines "RELEASE"
+        runtime "Release"
+        optimize "on"
+
 group ""
 
 project "Test"
@@ -118,7 +157,8 @@ project "Test"
     {
         "%{prj.location}/src",
         "FAT32/src",
-        "Ext2/src"
+        "Ext2/src",
+        "exFAT/src"
     }
 
     defines
@@ -129,7 +169,8 @@ project "Test"
     links
     {
         "FAT32",
-        "Ext2"
+        "Ext2",
+        "exFAT"
     }
 
     filter "system:windows"

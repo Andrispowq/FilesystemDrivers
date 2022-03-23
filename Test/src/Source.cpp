@@ -1,5 +1,6 @@
 #include "FAT32.h"
 #include "ext2driver.h"
+#include "exFATdriver.h"
 
 #include <fstream>
 #include <string>
@@ -7,12 +8,20 @@
 int main()
 {
 	ext2driver ext2("../Ext2/res/ext2.img");
+	exFAT::exFATDriver exFAT("../exFAT/res/exFAT.img");
+
+	exFAT::DirEntry entry;
+	exFAT.OpenFile("~/kernel.elf", &entry);
+
+	char* buf = new char[entry.size];
+	exFAT.ReadFile(entry, 0, buf, entry.size);
+	delete[] buf;
 
 	FAT32 fat32("../FAT32/res/HackOS.img");
 	FAT32_FolderStructure* root = fat32.GetRoot();
 	FAT32Driver* driver = fat32.GetDriver();
 
-	fat32.DeleteFile(fat32.OpenFile("~/USR/FILES/my_songs_file.json"));
+	//fat32.DeleteFile(fat32.OpenFile("~/USR/FILES/playlist_file.json"));
 
 	FAT32_OpenFile* file = nullptr;
 	while (true)

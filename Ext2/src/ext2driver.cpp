@@ -27,7 +27,28 @@ ext2driver::ext2driver(const std::string& image)
 	block_buffer = new uint8_t[block_size];
 	inode_buffer = new uint8_t[block_size];
 
-	std::vector<ext2_DirEntry> root = GetDirectories(2);
+	/*std::vector<ext2_DirEntry> root = GetDirectories(2);
+
+	for (auto& elem : root)
+	{
+		if ((elem.type_indicator & EXT2_TYPE_DIR) == EXT2_TYPE_DIR)
+		{
+
+			std::vector<ext2_DirEntry> root_ = GetDirectories(elem.inode);
+
+			std::cout << "Under " << elem.name << '\n';
+			for (auto& elem_ : root_)
+			{
+				std::cout << elem_.name << ' ';
+			}
+
+			std::cout << '\n';
+		}
+		else
+		{
+			std::cout << elem.name << '\n';
+		}
+	}*/
 
 }
 

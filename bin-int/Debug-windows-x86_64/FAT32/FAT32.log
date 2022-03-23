@@ -1,7 +1,7 @@
 ﻿  FAT32Driver.cpp
-F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.cpp(217,31): warning C4267: 'initializing': conversion from 'size_t' to 'uint32_t', possible loss of data
-F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.cpp(234,35): warning C4267: 'initializing': conversion from 'size_t' to 'uint32_t', possible loss of data
-F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.cpp(252,34): warning C4267: 'initializing': conversion from 'size_t' to 'uint32_t', possible loss of data
-F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.cpp(416,22): warning C4309: '=': truncation of constant value
-F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.cpp(735,25): warning C4244: '=': conversion from 'uint64_t' to 'uint32_t', possible loss of data
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.cpp(211,31): warning C4267: 'initializing': conversion from 'size_t' to 'uint32_t', possible loss of data
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.cpp(228,35): warning C4267: 'initializing': conversion from 'size_t' to 'uint32_t', possible loss of data
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.cpp(246,34): warning C4267: 'initializing': conversion from 'size_t' to 'uint32_t', possible loss of data
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.cpp(410,22): warning C4309: '=': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.cpp(729,25): warning C4244: '=': conversion from 'uint64_t' to 'uint32_t', possible loss of data
   FAT32.vcxproj -> F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\bin\Debug-windows-x86_64\FAT32\FAT32.lib

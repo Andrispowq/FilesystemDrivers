@@ -1,5 +1,5 @@
 ﻿  ext2driver.cpp
 F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\Ext2\src\ext2defs.h(155,1): warning C4200: nonstandard extension used: zero-sized array in struct/union
 F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\Ext2\src\ext2defs.h(155,1): message : This member will be ignored by a defaulted constructor or copy/move assignment operator
-F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\Ext2\src\ext2driver.cpp(111): warning C4715: 'ext2driver::PrepareAddedDirectory': not all control paths return a value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\Ext2\src\ext2driver.cpp(132): warning C4715: 'ext2driver::PrepareAddedDirectory': not all control paths return a value
   Ext2.vcxproj -> F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\bin\Debug-windows-x86_64\Ext2\Ext2.lib

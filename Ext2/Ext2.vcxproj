@@ -127,8 +127,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="src\ext2driver.h" />
     <ClInclude Include="src\ext2defs.h" />
+    <ClInclude Include="src\ext2driver.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\ext2driver.cpp" />

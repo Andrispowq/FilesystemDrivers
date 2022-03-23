@@ -1,4 +1,8 @@
 ﻿  Source.cpp
 F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\Ext2\src\ext2defs.h(155,1): warning C4200: nonstandard extension used: zero-sized array in struct/union
 F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\Ext2\src\ext2defs.h(155,1): message : This member will be ignored by a defaulted constructor or copy/move assignment operator
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\exFAT\src\exFATdefs.h(15,1): warning C4005: 'END_CLUSTER': macro redefinition
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32defs.h(15): message : see previous definition of 'END_CLUSTER'
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\exFAT\src\exFATdefs.h(16,1): warning C4005: 'BAD_CLUSTER': macro redefinition
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32defs.h(16): message : see previous definition of 'BAD_CLUSTER'
   Test.vcxproj -> F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\bin\Debug-windows-x86_64\Test\Test.exe

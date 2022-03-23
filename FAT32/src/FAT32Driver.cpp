@@ -67,11 +67,8 @@ uint32_t FAT32Driver::ReadFAT(uint32_t cluster)
 		return -1;
 	}
 
-	uint32_t fat_offset = cluster * 4;
-	uint32_t ent_offset = (fat_offset % ClusterSize) / 4;
-
-	uint32_t* FATtable = (uint32_t*)(FATcache + fat_offset);
-	return FATtable[ent_offset] & 0x0FFFFFFF;
+	uint32_t* FATtable = (uint32_t*)FATcache;
+	return FATtable[cluster] & 0x0FFFFFFF;
 }
 
 uint32_t FAT32Driver::WriteFAT(uint32_t cluster, uint32_t value)
@@ -81,12 +78,9 @@ uint32_t FAT32Driver::WriteFAT(uint32_t cluster, uint32_t value)
 		return -1;
 	}
 
-	uint32_t fat_offset = cluster * 4;
-	uint32_t ent_offset = (fat_offset % ClusterSize) / 4;
-
-	uint32_t* FATtable = (uint32_t*)(FATcache + fat_offset);
-	FATtable[ent_offset] &= 0xF0000000;
-	FATtable[ent_offset] |= (value & 0x0FFFFFFF);
+	uint32_t* FATtable = (uint32_t*)FATcache;
+	FATtable[cluster] &= 0xF0000000;
+	FATtable[cluster] |= (value & 0x0FFFFFFF);
 	return 0;
 }
 
