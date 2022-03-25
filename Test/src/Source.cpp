@@ -7,7 +7,10 @@
 
 int main()
 {
-	ext2driver ext2("../Ext2/res/ext2.img");
+	ext2::ext2driver ext2("../Ext2/res/ext2.img");
+	ext2::DirEntry dirEntry2;
+	ext2.OpenFile("~/kernel.elf", &dirEntry2);
+
 	exFAT::exFATDriver exFAT("../exFAT/res/exFAT.img");
 
 	exFAT::DirEntry entry;

@@ -9,49 +9,55 @@
 
 #include <vector>
 
-class ext2driver
+namespace ext2
 {
-public:
-	ext2driver(const std::string& image);
-	~ext2driver();
+	class ext2driver
+	{
+	public:
+		ext2driver(const std::string& image);
+		~ext2driver();
 
-	std::vector<ext2_DirEntry> GetDirectories(uint32_t inode);
+		std::vector<DirEntry> GetDirectories(uint32_t inode);
 
-	int PrepareAddedDirectory(uint32_t inode);
-	void CleanFileEntry(uint32_t inode, ext2_DirEntry entry);
+		int PrepareAddedDirectory(uint32_t inode);
+		void CleanFileEntry(uint32_t inode, DirEntry entry);
 
-	int DirectorySearch(const char* FilePart, uint32_t cluster, ext2_DirEntry* file);
-	int DirectoryAdd(uint32_t cluster, ext2_DirEntry file);
+		int DirectorySearch(const char* FilePart, uint32_t inode, DirEntry* file);
+		int DirectoryAdd(uint32_t cluster, DirEntry file);
 
-	int OpenFile(const char* filePath, ext2_DirEntry* fileMeta);
-	int CreateFile(const char* filePath, ext2_DirEntry* fileMeta);
-	int DeleteFile(ext2_DirEntry fileMeta);
+		int OpenFile(const char* filePath, DirEntry* fileMeta);
+		int CreateFile(const char* filePath, DirEntry* fileMeta);
+		int DeleteFile(DirEntry fileMeta);
 
-	int ReadFile(ext2_DirEntry fileMeta, uint64_t offset, void* buffer, uint64_t bytes);
-	int WriteFile(ext2_DirEntry fileMeta, uint64_t offset, void* buffer, uint64_t bytes);
-	int ResizeFile(ext2_DirEntry fileMeta, uint32_t new_size);
+		int ReadFile(DirEntry fileMeta, uint64_t offset, void* buffer, uint64_t bytes);
+		int WriteFile(DirEntry fileMeta, uint64_t offset, void* buffer, uint64_t bytes);
+		int ResizeFile(DirEntry fileMeta, uint32_t new_size);
 
-private:
-	ext2_DirEntry ToDirEntry(directory_entry* inode);
+	private:
+		DirEntry ToDirEntry(directory_entry* inode);
 
-	void ReadBlock(uint32_t block, void* data);
-	void WriteBlock(uint32_t block, void* data);
+		void ReadBlock(uint32_t block, void* data);
+		void WriteBlock(uint32_t block, void* data);
 
-	void ReadInode(uint32_t inode, ext2_inode* data);
-	void WriteInode(uint32_t inode, ext2_inode data);
+		void ReadInode(uint32_t inode, ext2_inode* data);
+		void WriteInode(uint32_t inode, ext2_inode data);
 
-private:
-	std::fstream file;
+		void GetDirectoriesOnInode(uint32_t inode, std::vector<DirEntry>& entries);
+		uint32_t GetInodeFromFilePath(const char* filePath, DirEntry* entry);
 
-	ext2_superblock* superblock;
-	uint8_t* block_buffer;
-	uint8_t* inode_buffer;
+	private:
+		std::fstream file;
 
-	uint32_t blocks_per_block_group;
-	uint32_t inodes_per_block_group;
-	uint32_t block_size;
-	uint32_t inode_size;
-	uint32_t inodes_per_block;
+		SuperBlock* superblock;
+		uint8_t* block_buffer;
+		uint8_t* inode_buffer;
+
+		uint32_t blocks_per_block_group;
+		uint32_t inodes_per_block_group;
+		uint32_t block_size;
+		uint32_t inode_size;
+		uint32_t inodes_per_block;
+	};
 };
 
 #endif

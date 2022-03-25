@@ -5,5 +5,5 @@ F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\exFAT\src\exFA
 F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\exFAT\src\exFATdriver.cpp(221,35): warning C4267: 'initializing': conversion from 'size_t' to 'uint32_t', possible loss of data
 F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\exFAT\src\exFATdriver.cpp(274,36): warning C4244: '=': conversion from 'uint16_t' to 'uint8_t', possible loss of data
 F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\exFAT\src\exFATdriver.cpp(283,32): warning C4244: '=': conversion from 'uint64_t' to 'uint32_t', possible loss of data
-F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\exFAT\src\exFATdriver.cpp(546,26): warning C4244: '=': conversion from 'uint64_t' to 'uint32_t', possible loss of data
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\exFAT\src\exFATdriver.cpp(556,26): warning C4244: '=': conversion from 'uint64_t' to 'uint32_t', possible loss of data
   exFAT.vcxproj -> F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\bin\Debug-windows-x86_64\exFAT\exFAT.lib
