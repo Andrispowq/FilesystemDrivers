@@ -19,11 +19,13 @@ namespace ext2
 
 		std::vector<DirEntry> GetDirectories(uint32_t inode);
 
+		void ModifyDirectoryEntry(uint32_t inode, const char* name, DirEntry modified);
+
 		int PrepareAddedDirectory(uint32_t inode);
 		void CleanFileEntry(uint32_t inode, DirEntry entry);
 
 		int DirectorySearch(const char* FilePart, uint32_t inode, DirEntry* file);
-		int DirectoryAdd(uint32_t cluster, DirEntry file);
+		int DirectoryAdd(uint32_t inode, DirEntry file);
 
 		int OpenFile(const char* filePath, DirEntry* fileMeta);
 		int CreateFile(const char* filePath, DirEntry* fileMeta);
@@ -45,18 +47,25 @@ namespace ext2
 		void GetDirectoriesOnInode(uint32_t inode, std::vector<DirEntry>& entries);
 		uint32_t GetInodeFromFilePath(const char* filePath, DirEntry* entry);
 
+		uint32_t GetBlockOnInode(ext2_inode inode, uint64_t block_index);
+
+		uint64_t GetSize(ext2_inode inode);
+
 	private:
 		std::fstream file;
 
 		SuperBlock* superblock;
 		uint8_t* block_buffer;
 		uint8_t* inode_buffer;
+		uint8_t* indirect_buffer;
 
 		uint32_t blocks_per_block_group;
 		uint32_t inodes_per_block_group;
 		uint32_t block_size;
 		uint32_t inode_size;
 		uint32_t inodes_per_block;
+
+		bool read_only = false;
 	};
 };
 

@@ -115,13 +115,13 @@ namespace exFAT
 
 	struct DirEntry
 	{
-		char name[128];
-		uint32_t cluster;
-		uint32_t size;
-		uint8_t attributes;
+		char name[128] = { 0 };
+		uint32_t cluster = 0;
+		uint32_t size = 0;
+		uint8_t attributes = 0;
 
-		uint32_t parentCluster;
-		uint32_t offsetInParentCluster;
+		uint32_t parentCluster = 0;
+		uint32_t offsetInParentCluster = 0;
 	};
 
 };

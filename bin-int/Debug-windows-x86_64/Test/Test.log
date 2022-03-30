@@ -1,8 +1,437 @@
 ﻿  Source.cpp
-F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\Ext2\src\ext2defs.h(159,1): warning C4200: nonstandard extension used: zero-sized array in struct/union
-F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\Ext2\src\ext2defs.h(159,1): message : This member will be ignored by a defaulted constructor or copy/move assignment operator
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(9,27): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(9,27): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(9,39): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(9,39): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(9,45): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(9,45): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(9,51): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(9,51): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(9,57): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(9,57): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(9,63): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(9,63): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(9,69): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(9,69): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(9,75): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(9,75): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(9,81): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(9,81): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(10,2): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(10,2): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(10,8): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(10,8): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(10,38): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(10,38): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(10,62): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(10,62): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(10,80): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(10,80): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(11,2): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(11,2): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(11,8): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(11,8): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(11,14): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(11,14): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(11,20): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(11,20): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(11,32): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(11,32): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(11,50): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(11,50): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(11,68): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(11,68): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(12,2): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(12,2): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(12,20): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(12,20): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(12,38): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(12,38): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(12,50): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(12,50): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(12,56): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(12,56): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(12,74): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(12,74): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(13,14): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(13,14): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(13,32): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(13,32): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(13,44): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(13,44): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(13,62): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(13,62): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(13,68): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(13,68): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(13,80): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(13,80): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(14,32): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(14,32): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(14,44): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(14,44): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(14,62): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(14,62): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(14,68): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(14,68): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(14,80): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(14,80): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(15,8): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(15,8): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(15,20): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(15,20): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(15,32): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(15,32): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(15,44): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(15,44): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(15,56): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(15,56): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(15,74): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(15,74): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(16,2): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(16,2): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(16,20): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(16,20): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(16,26): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(16,26): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(16,50): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(16,50): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(16,56): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(16,56): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(16,62): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(16,62): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(16,68): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(16,68): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(17,44): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(17,44): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(17,50): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(17,50): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(17,68): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(17,68): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(17,74): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(17,74): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(18,2): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(18,2): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(18,8): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(18,8): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(18,20): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(18,20): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(18,26): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(18,26): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(18,38): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(18,38): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(18,44): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(18,44): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(18,50): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(18,50): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(18,56): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(18,56): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(18,68): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(18,68): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(18,74): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(18,74): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(18,80): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(18,80): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(19,8): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(19,8): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(20,2): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(20,2): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(20,74): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(20,74): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(21,2): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(21,2): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(21,14): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(21,14): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(21,26): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(21,26): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(21,44): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(21,44): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(21,50): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(21,50): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(21,62): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(21,62): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(21,74): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(21,74): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(21,80): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(21,80): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(22,8): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(22,8): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(22,32): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(22,32): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(22,38): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(22,38): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(22,50): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(22,50): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(22,62): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(22,62): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(23,8): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(23,8): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(23,14): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(23,14): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(23,32): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(23,32): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(23,44): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(23,44): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(23,50): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(23,50): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(23,56): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(23,56): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(23,62): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(23,62): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(23,68): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(23,68): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(23,74): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(23,74): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(23,80): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(23,80): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(24,14): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(24,14): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(24,26): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(24,26): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(24,32): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(24,32): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(24,44): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(24,44): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(24,50): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(24,50): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(24,56): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(24,56): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(24,62): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(24,62): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(24,68): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(24,68): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(24,74): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(24,74): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(24,80): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(24,80): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(25,2): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(25,2): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(28,80): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(28,80): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(29,2): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(29,2): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(29,20): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(29,20): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(29,26): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(29,26): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(29,32): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(29,32): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(31,74): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(31,74): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(31,80): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(31,80): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(32,2): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(32,2): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(32,8): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(32,8): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(32,14): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(32,14): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(32,20): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(32,20): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(32,26): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(32,26): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(32,32): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(32,32): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(32,38): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(32,38): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(32,44): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(32,44): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(32,50): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(32,50): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(32,56): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(32,56): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(32,62): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(32,62): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(32,68): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(32,68): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(32,74): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(32,74): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(32,80): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(32,80): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(33,2): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(33,2): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(33,8): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(33,8): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(33,14): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(33,14): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(33,20): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(33,20): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(33,26): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(33,26): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(33,32): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(33,32): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(33,38): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(33,38): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(33,44): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(33,44): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(33,50): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(33,50): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(33,56): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(33,56): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(33,62): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(33,62): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(33,68): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(33,68): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(33,74): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(33,74): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(33,80): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(33,80): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(34,2): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(34,2): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(34,8): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(34,8): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(34,14): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(34,14): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(34,20): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(34,20): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(34,26): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(34,26): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(34,32): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(34,32): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(34,38): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(34,38): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(34,44): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(34,44): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(34,50): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(34,50): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(34,56): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(34,56): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(34,62): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(34,62): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(34,68): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(34,68): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(34,74): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(34,74): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(34,80): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(34,80): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(35,2): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(35,2): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(35,8): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(35,8): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(35,14): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(35,14): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(35,20): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(35,20): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(35,26): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(35,26): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(35,32): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(35,32): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(35,38): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(35,38): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(35,44): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(35,44): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(35,50): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(35,50): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(35,56): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(35,56): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(35,62): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(35,62): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(35,68): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(35,68): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(35,74): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(35,74): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(35,80): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(35,80): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(36,2): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(36,2): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(36,8): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(36,8): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(36,14): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(36,14): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(36,20): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(36,20): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(36,26): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(36,26): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(36,32): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(36,32): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(36,38): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(36,38): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(36,44): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(36,44): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(36,50): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(36,50): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(36,56): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(36,56): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(36,62): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(36,62): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(36,68): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(36,68): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(36,74): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(36,74): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(36,80): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(36,80): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(37,2): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(37,2): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(37,8): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(37,8): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(37,14): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(37,14): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(37,20): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(37,20): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(37,26): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(37,26): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(37,32): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(37,32): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(37,38): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(37,38): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(37,44): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(37,44): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(37,50): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(37,50): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(37,56): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(37,56): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(37,62): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(37,62): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(37,68): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(37,68): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(37,74): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(37,74): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(37,80): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(37,80): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(38,2): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(38,2): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(38,8): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(38,8): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(38,14): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(38,14): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(38,20): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(38,20): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(38,26): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(38,26): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(38,32): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(38,32): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(38,38): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(38,38): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(38,44): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(38,44): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(38,50): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(38,50): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(38,56): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(38,56): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(38,62): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(38,62): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(38,68): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(38,68): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(38,74): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(38,74): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(38,80): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(38,80): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(39,2): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(39,2): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(39,8): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(39,8): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(39,14): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(39,14): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(39,20): warning C4838: conversion from 'int' to 'const char' requires a narrowing conversion
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32Driver.h(39,20): warning C4309: 'initializing': truncation of constant value
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\Ext2\src\ext2defs.h(175,1): warning C4200: nonstandard extension used: zero-sized array in struct/union
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\Ext2\src\ext2defs.h(175,1): message : This member will be ignored by a defaulted constructor or copy/move assignment operator
 F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\exFAT\src\exFATdefs.h(15,1): warning C4005: 'END_CLUSTER': macro redefinition
 F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32defs.h(15): message : see previous definition of 'END_CLUSTER'
 F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\exFAT\src\exFATdefs.h(16,1): warning C4005: 'BAD_CLUSTER': macro redefinition
 F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\FAT32\src\FAT32defs.h(16): message : see previous definition of 'BAD_CLUSTER'
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\Test\src\Source.cpp(15,15): warning C4244: 'initializing': conversion from 'uint64_t' to 'float', possible loss of data
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\Test\src\Source.cpp(16,15): warning C4244: 'initializing': conversion from 'uint64_t' to 'float', possible loss of data
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\Test\src\Source.cpp(17,13): warning C4244: 'initializing': conversion from 'uint64_t' to 'float', possible loss of data
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\Test\src\Source.cpp(18,12): warning C4244: 'initializing': conversion from 'uint64_t' to 'float', possible loss of data
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\Test\src\Source.cpp(19,13): warning C4244: 'initializing': conversion from 'uint64_t' to 'float', possible loss of data
   Test.vcxproj -> F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\bin\Debug-windows-x86_64\Test\Test.exe

@@ -7,6 +7,7 @@ FAT32Driver::FAT32Driver(const std::string& image)
 	if (!file.is_open())
 	{
 		std::cerr << "ERROR: " << image << " could not be opened!\n";
+		return;
 	}
 
 	BootSector = new FAT32_BootSector();
@@ -575,6 +576,13 @@ int FAT32Driver::DirectoryAdd(uint32_t cluster, DirEntry file)
 					return DirectoryAdd(next_cluster, file);
 				}
 			}
+
+			if (((ent->attributes & FILE_VOLUME_ID) == FILE_VOLUME_ID) && ((ent->attributes & FILE_LONG_NAME) != FILE_LONG_NAME))
+			{
+				memcpy(metadata - count, ent - count, sizeof(DirectoryEntry) * (count + 1));
+				WriteCluster(cluster, temporaryBuffer); //Write the modified stuff back
+				return 0;
+			}
 			
 			ent->ctime_date = GetDate();
 			ent->ctime_time = GetTime();
@@ -813,11 +821,14 @@ uint32_t FAT32Driver::GetClusterFromFilePath(const char* filePath, DirEntry* ent
 	DirEntry fileInfo;
 
 	uint32_t iterator = 2;
-	if (strcmp(filePath, "~") == 0)
+	if ((strcmp(filePath, "~") == 0) || (strcmp(filePath, "~/") == 0))
 	{
+		strcpy(fileInfo.name, "~");
 		fileInfo.attributes = FILE_DIRECTORY | FILE_VOLUME_ID;
 		fileInfo.size = 0;
 		fileInfo.cluster = active_cluster;
+		fileInfo.parentCluster = 0;
+		fileInfo.offsetInParentCluster = 0;
 	}
 	else
 	{
@@ -1051,12 +1062,12 @@ bool FAT32Driver::Compare(DirectoryEntry* entry, const char* name, bool long_nam
 	return strcmp(ent.name, name) == 0;
 }
 
-uint8_t FAT32Driver::GetMilliseconds() const
+uint8_t FAT32Driver::GetMilliseconds()
 {
 	return 0; //Currently not implemented
 }
 
-uint16_t FAT32Driver::GetTime() const
+uint16_t FAT32Driver::GetTime()
 {
 	time_t rawtime;
 	struct tm* timeinfo;
@@ -1071,7 +1082,7 @@ uint16_t FAT32Driver::GetTime() const
 	return sec_over_2 | (min << 5) | (hour << 11);
 }
 
-uint16_t FAT32Driver::GetDate() const
+uint16_t FAT32Driver::GetDate()
 {
 	time_t rawtime;
 	struct tm* timeinfo;
@@ -1265,4 +1276,154 @@ void FAT32Driver::ConvertFromFATFormat(char* input, char* output)
 
 	output[12] = '\0'; //ensures proper termination regardless of program operation previously
 	return;
+}
+
+int FAT32Driver::InitialiseFAT32(FAT32_Data data)
+{
+	std::fstream fat_file;
+	fat_file.open("../FAT32/res/" + data.name + ".img", std::ios::binary | std::ios::out);
+
+	if (!fat_file.is_open())
+	{
+		std::cerr << "ERROR: res/" << data.name << ".img could not be created!\n";
+		return -1;
+	}
+
+	std::vector<char> empty(512, 0);
+	uint64_t driveSize = (data.TotalSectors * data.BytesPerSector) / 512;
+
+	for (int i = 0; i < driveSize; i++)
+	{
+		if (!fat_file.write(&empty[0], empty.size()))
+		{
+			std::cerr << "problem writing to file" << std::endl;
+			return -1;
+		}
+	}
+
+	fat_file.flush();
+
+	FAT32_BootSector* bootSector = new FAT32_BootSector();
+	memset(bootSector, 0, 512);
+
+	uint32_t NumberOfClusters = data.TotalSectors / data.SectorsPerCluster;
+	data.SectorsPerFAT = (NumberOfClusters / 128) + 1; //A sector is 512 bytes, can hold 128 4-byte cluster values
+
+	bootSector->JumpInstruction[0] = 0xEB;
+	bootSector->JumpInstruction[1] = 0x58;
+	bootSector->JumpInstruction[2] = 0x90;
+	memcpy(bootSector->OEM, "HACKOS01", 8);
+
+	bootSector->BytesPerSector = data.BytesPerSector;
+	bootSector->SectorsPerCluster = data.SectorsPerCluster;
+	bootSector->ReservedSectors = data.ReservedSectors;
+	bootSector->NumberOfFATs = data.NumberOfFATs;
+	bootSector->RootEntries = 0;
+	bootSector->TotalSectors = (data.TotalSectors < 65535) ? data.TotalSectors : 0;
+	bootSector->MediaType = data.MediaType;
+	bootSector->SectorsPerFAT = 0;
+	bootSector->SectorsPerTrack = data.SectorsPerTrack;
+	bootSector->HeadsPerCylinder = data.HeadsPerCylinder;
+	bootSector->HiddenSectors = data.HiddenSectors;
+	bootSector->LargeTotalSectors = (data.TotalSectors < 65535) ? 0 : data.TotalSectors;
+
+	bootSector->SectorsPerFAT32 = data.SectorsPerFAT;
+	bootSector->Flags = data.Flags;
+	bootSector->Version = data.Version;
+	bootSector->RootDirStart = data.RootDirStart;
+	bootSector->FSInfoSector = data.FSInfoSector;
+	bootSector->BackupBootSector = data.BackupBootSector;
+
+	bootSector->Reserved0 = data.Reserved0;
+	bootSector->Reserved1 = data.Reserved1;
+	bootSector->Reserved2 = data.Reserved2;
+
+	bootSector->DriveNumber = data.DriveNumber;
+	bootSector->Reserved3 = data.Reserved3;
+	bootSector->BootSignature = data.BootSignature;
+	bootSector->VolumeSerial = ((uint32_t)GetTime() | ((uint32_t)GetDate() << 16));
+	memcpy(bootSector->VolumeLabel, data.VolumeLabel, 11);
+	memcpy(bootSector->FSName, data.Name, 8);
+
+	memcpy(bootSector->BootCode, BootCode, 420);
+
+	bootSector->BootablePartitionSignature[0] = 0xAA;
+	bootSector->BootablePartitionSignature[1] = 0xFF;
+
+	uint32_t FirstDataSector = bootSector->NumberOfFATs * bootSector->SectorsPerFAT32 + bootSector->ReservedSectors;
+	bootSector->Reserved0 = FirstDataSector;
+
+	FSInfo* fsInfo = new FSInfo;
+	memset(fsInfo, 0, 512);
+	fsInfo->LeadSignature = 0x41615252;
+	fsInfo->StructSignature = 0x61417272;
+	fsInfo->FreeSpace = 0xFFFFFFFF; //We're gonna overwrite this soon so no point storing
+	fsInfo->LastWritten = 0xFFFFFFFF;
+	fsInfo->TrailSignature = 0xAA550000;
+
+	uint32_t* FAT = new uint32_t[bootSector->SectorsPerFAT32 * bootSector->BytesPerSector];
+	memset(FAT, 0, bootSector->SectorsPerFAT32 * bootSector->BytesPerSector);
+	FAT[0] = bootSector->DriveNumber | 0xFFFFFF00; //The zeroth entry ought to be 0xFFFFFF00 | drive number
+	FAT[1] = 0xFFFFFFFF; //The first entry ought to be 0xFFFFFFFF
+	FAT[2] = 0x0FFFFFFF; //The root entry is (for now) only 1 cluster
+
+	//Write primary boot sector
+	fat_file.seekg(0);
+	fat_file.write((const char*)bootSector, 512);
+	//Write FS info structure
+	fat_file.seekg(bootSector->FSInfoSector * bootSector->BytesPerSector);
+	fat_file.write((const char*)fsInfo, 512);
+	//Write secondary boot sector
+	fat_file.seekg(bootSector->BackupBootSector * bootSector->BytesPerSector);
+	fat_file.write((const char*)bootSector, 512);
+	//Write secondary FS info structure???
+	fat_file.seekg((bootSector->BackupBootSector + 1) * bootSector->BytesPerSector);
+	fat_file.write((const char*)fsInfo, 512);
+
+	//Write FATs
+	fat_file.seekg(bootSector->ReservedSectors * bootSector->BytesPerSector);
+	fat_file.write((const char*)FAT, bootSector->SectorsPerFAT32 * bootSector->BytesPerSector);
+
+	//copy the first FAT onto the other ones upon closing the FS
+	for (uint32_t i = 1; i < bootSector->NumberOfFATs; i++)
+	{
+		fat_file.seekg(bootSector->ReservedSectors * bootSector->BytesPerSector + bootSector->SectorsPerFAT32 * bootSector->BytesPerSector * i);
+		fat_file.write((const char*)FAT, bootSector->SectorsPerFAT32 * bootSector->BytesPerSector);
+	}
+
+	delete[] FAT;
+	delete bootSector;
+
+	fat_file.flush();
+	fat_file.close();
+
+	return 0;
+}
+
+FAT32Driver* FAT32Driver::CreateFAT32(FAT32_Data data)
+{
+	int ret = InitialiseFAT32(data);
+	if (ret != 0)
+	{
+		return nullptr;
+	}
+
+	FAT32Driver* driver = new FAT32Driver("../FAT32/res/" + data.name + ".img"); //Now the FAT is almost complete for use, lets add some necessary stuff
+
+	DirEntry volumeID;
+	memcpy(volumeID.name, "VOLUME  .SYS", 12);
+	volumeID.attributes = FILE_VOLUME_ID;
+	volumeID.size = 0;
+	ret = driver->CreateFile("~/", &volumeID);
+
+	const char* contents = "[IDENFILE.SYS]\nSystem file created by the HackOSv0.1 FAT32 driver\n\n";
+
+	DirEntry identifier;
+	memcpy(identifier.name, "IDENFILE.SYS", 12);
+	identifier.attributes = FILE_SYSTEM | FILE_ARCHIVE;
+	identifier.size = 4096;
+	ret = driver->CreateFile("~/", &identifier);
+	ret = driver->WriteFile(identifier, 0, (void*)contents, 68);
+
+	return driver;
 }

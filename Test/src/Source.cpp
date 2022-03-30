@@ -1,4 +1,4 @@
-#include "FAT32.h"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         #include "FAT32.h"
 #include "ext2driver.h"
 #include "exFATdriver.h"
 
@@ -10,6 +10,17 @@ int main()
 	ext2::ext2driver ext2("../Ext2/res/ext2.img");
 	ext2::DirEntry dirEntry2;
 	ext2.OpenFile("~/kernel.elf", &dirEntry2);
+
+	uint64_t unix_time = 1648575577;
+	float second = unix_time % 60;
+	float minute = (unix_time /= 60) % 60;
+	float hour = (unix_time /= 60) % 24;
+	float day = (unix_time /= 24) % 366;
+	float year = (unix_time /= 365) + 1970;
+
+	char* buf2 = new char[dirEntry2.size];
+	ext2.ReadFile(dirEntry2, 0, buf2, dirEntry2.size);
+	delete[] buf2;
 
 	exFAT::exFATDriver exFAT("../exFAT/res/exFAT.img");
 
@@ -24,7 +35,14 @@ int main()
 	FAT32_FolderStructure* root = fat32.GetRoot();
 	FAT32Driver* driver = fat32.GetDriver();
 
-	//fat32.DeleteFile(fat32.OpenFile("~/USR/FILES/playlist_file.json"));
+	FAT32_Data data;
+	data.name = "test";
+	data.TotalSectors = 93750;
+	FAT32Driver* new_file = FAT32Driver::CreateFAT32(data);
+	delete new_file;
+
+	FAT32_OpenFile* file_to_delete = fat32.OpenFile("~/USR/FILES/playlist_file.json");
+	if(file_to_delete) fat32.DeleteFile(file_to_delete);
 
 	FAT32_OpenFile* file = nullptr;
 	while (true)
@@ -127,4 +145,4 @@ int main()
 	}
 
 	return 0;
-}
+}                                                                                                                                                                                                                                                                                                                                                                                                                                                               
