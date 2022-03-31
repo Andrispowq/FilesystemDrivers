@@ -864,9 +864,9 @@ DirEntry FAT32Driver::FromFATEntry(DirectoryEntry* entry, bool long_fname)
 {
 	DirEntry ent;
 
-	if (long_fname)
+	if (long_fname && (((LongDirectoryEntry*)(entry - 1))->attributes & FILE_LONG_NAME))
 	{
-		char long_name[128];
+		char long_name[255];
 		uint32_t count = 0;
 		LongDirectoryEntry* lEntry = (LongDirectoryEntry*)(entry - 1);
 		while (true)
@@ -1347,8 +1347,8 @@ int FAT32Driver::InitialiseFAT32(FAT32_Data data)
 
 	memcpy(bootSector->BootCode, BootCode, 420);
 
-	bootSector->BootablePartitionSignature[0] = 0xAA;
-	bootSector->BootablePartitionSignature[1] = 0xFF;
+	bootSector->BootablePartitionSignature[0] = 0x55;
+	bootSector->BootablePartitionSignature[1] = 0xAA;
 
 	uint32_t FirstDataSector = bootSector->NumberOfFATs * bootSector->SectorsPerFAT32 + bootSector->ReservedSectors;
 	bootSector->Reserved0 = FirstDataSector;
@@ -1357,13 +1357,13 @@ int FAT32Driver::InitialiseFAT32(FAT32_Data data)
 	memset(fsInfo, 0, 512);
 	fsInfo->LeadSignature = 0x41615252;
 	fsInfo->StructSignature = 0x61417272;
-	fsInfo->FreeSpace = 0xFFFFFFFF; //We're gonna overwrite this soon so no point storing
-	fsInfo->LastWritten = 0xFFFFFFFF;
+	fsInfo->FreeSpace = NumberOfClusters - 1; //We're gonna overwrite this soon so no point storing
+	fsInfo->LastWritten = 2;
 	fsInfo->TrailSignature = 0xAA550000;
 
 	uint32_t* FAT = new uint32_t[bootSector->SectorsPerFAT32 * bootSector->BytesPerSector];
 	memset(FAT, 0, bootSector->SectorsPerFAT32 * bootSector->BytesPerSector);
-	FAT[0] = bootSector->DriveNumber | 0xFFFFFF00; //The zeroth entry ought to be 0xFFFFFF00 | drive number
+	FAT[0] = bootSector->MediaType | 0xFFFFFF00; //The zeroth entry ought to be 0xFFFFFF00 | drive number
 	FAT[1] = 0xFFFFFFFF; //The first entry ought to be 0xFFFFFFFF
 	FAT[2] = 0x0FFFFFFF; //The root entry is (for now) only 1 cluster
 
@@ -1411,7 +1411,7 @@ FAT32Driver* FAT32Driver::CreateFAT32(FAT32_Data data)
 	FAT32Driver* driver = new FAT32Driver("../FAT32/res/" + data.name + ".img"); //Now the FAT is almost complete for use, lets add some necessary stuff
 
 	DirEntry volumeID;
-	memcpy(volumeID.name, "VOLUME  .SYS", 12);
+	memcpy(volumeID.name, "256MB", 18);
 	volumeID.attributes = FILE_VOLUME_ID;
 	volumeID.size = 0;
 	ret = driver->CreateFile("~/", &volumeID);

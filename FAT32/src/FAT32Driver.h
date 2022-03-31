@@ -63,7 +63,7 @@ struct FAT32_Data
 	uint32_t Reserved1 = 0;
 	uint32_t Reserved2 = 0;
 
-	uint8_t DriveNumber = 0x80;
+	uint8_t DriveNumber = 0x00;//0x80;
 	uint8_t Reserved3 = 0;
 	uint8_t BootSignature = 41;
 	uint32_t VolumeSerial = 0;

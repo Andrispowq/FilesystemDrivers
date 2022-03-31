@@ -37,7 +37,7 @@ int main()
 
 	FAT32_Data data;
 	data.name = "test";
-	data.TotalSectors = 93750;
+	data.TotalSectors = 100000;
 	FAT32Driver* new_file = FAT32Driver::CreateFAT32(data);
 	delete new_file;
 
