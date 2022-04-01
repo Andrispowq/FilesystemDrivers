@@ -23,15 +23,18 @@
 #define FILE_DIRECTORY 0x10
 #define FILE_ARCHIVE 0x20
 
+#define EX_FAT_USE_SECOND_FAT 0x1
+
 #define ENTRY_END 0x00
+#define ENTRY_ALLOCATION_BITMAP 0x81
+#define ENTRY_VOLUME_LABEL 0x83
 #define ENTRY_FILE 0x85
 #define ENTRY_STREAM 0xC0
 #define ENTRY_FILENAME 0xC1
 
 namespace exFAT
 {
-
-	struct exFAT_BootSector
+	PACK(struct exFAT_BootSector
 	{
 		uint8_t JumpInstruction[3];
 		uint8_t OEM[8];
@@ -59,7 +62,7 @@ namespace exFAT
 
 		uint8_t BootCode[390];
 		uint8_t BootablePartitionSignature[2];
-	};
+	});
 
 	struct FileEntryGeneral
 	{
@@ -67,7 +70,24 @@ namespace exFAT
 		uint8_t Data[31];
 	};
 
-	struct FileEntry
+	PACK(struct BitmapEntry
+	{
+		uint8_t EntryType = ENTRY_ALLOCATION_BITMAP;
+		uint8_t BitmapNumber;
+		uint8_t Reserved[18];
+		uint32_t Cluster;
+		uint64_t Size;
+	});
+
+	PACK(struct VolumeLabelEntry
+	{
+		uint8_t EntryType = ENTRY_VOLUME_LABEL;
+		uint8_t Size;
+		uint16_t Label[22];
+		uint64_t Reserved;
+	});
+
+	PACK(struct FileEntry
 	{
 		uint8_t EntryType = ENTRY_FILE;
 		uint8_t SecondaryEntries;
@@ -86,9 +106,9 @@ namespace exFAT
 		uint8_t ModificationUTC;
 		uint8_t AccessUTC;
 		uint8_t Reserved1[7];
-	};
+	});
 
-	struct StreamEntry
+	PACK(struct StreamEntry
 	{
 		uint8_t EntryType = ENTRY_STREAM;
 		uint8_t SecondaryFlags;
@@ -103,15 +123,15 @@ namespace exFAT
 		uint32_t FirstCluster;
 
 		uint64_t DataLength;
-	};
+	});
 
-	struct FileNameEntry
+	PACK(struct FileNameEntry
 	{
 		uint8_t EntryType = ENTRY_FILENAME;
 		uint8_t Flags;
 
 		uint16_t FileName[15];
-	};
+	});
 
 	struct DirEntry
 	{
@@ -123,7 +143,6 @@ namespace exFAT
 		uint32_t parentCluster = 0;
 		uint32_t offsetInParentCluster = 0;
 	};
-
 };
 
 #endif

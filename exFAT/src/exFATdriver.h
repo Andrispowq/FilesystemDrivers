@@ -60,6 +60,12 @@ namespace exFAT
 		uint8_t* temporaryBuffer2;
 		uint8_t* FATcache;
 
+		char VolumeLabel[11] = { 0 };
+		 
+		BitmapEntry* bitmapEntry1 = nullptr;
+		BitmapEntry* bitmapEntry2 = nullptr;
+		uint8_t* AllocationBitmap;
+
 		exFAT_BootSector* BootSector;
 
 		uint32_t SectorSize;

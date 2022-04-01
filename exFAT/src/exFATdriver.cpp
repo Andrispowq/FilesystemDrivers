@@ -25,15 +25,48 @@ namespace exFAT
 		temporaryBuffer2 = new uint8_t[ClusterSize];
 
 		FATcache = new uint8_t[BootSector->FATLength * SectorSize];
-		file.seekg(BootSector->FATOffset * SectorSize);
-		file.read((char*)FATcache, BootSector->FATLength * SectorSize);
 
-		std::vector<DirEntry> entries;
-		GetDirectoriesOnCluster(BootSector->RootDirectoryCluster, entries);
+		if (((BootSector->Flags & EX_FAT_USE_SECOND_FAT) == EX_FAT_USE_SECOND_FAT) && (BootSector->NumberOfFATs == 2))
+		{
+			file.seekg((BootSector->FATOffset + BootSector->FATLength) * SectorSize);
+			file.read((char*)FATcache, BootSector->FATLength * SectorSize);
+		}
+		else
+		{
+			file.seekg(BootSector->FATOffset * SectorSize);
+			file.read((char*)FATcache, BootSector->FATLength * SectorSize);
+		}
 	}
 
 	exFATDriver::~exFATDriver()
 	{
+		file.seekg(0);
+		file.write((const char*)BootSector, 512);
+
+		file.seekg(BootSector->FATOffset * SectorSize);
+		file.write((const char*)FATcache, BootSector->FATLength * SectorSize);
+
+		//copy the first FAT onto the other ones upon closing the FS
+		for (uint32_t i = 1; i < BootSector->NumberOfFATs; i++)
+		{
+			file.seekg((BootSector->FATOffset + BootSector->FATLength) * SectorSize);
+			file.write((const char*)FATcache, BootSector->FATLength * SectorSize);
+		}
+
+		if (bitmapEntry1)
+		{
+			WriteClusterChain(bitmapEntry1->Cluster, AllocationBitmap, bitmapEntry1->Size);
+		}
+
+		if (bitmapEntry2)
+		{
+			WriteClusterChain(bitmapEntry2->Cluster, AllocationBitmap, bitmapEntry2->Size);
+		}
+
+		delete[] FATcache;
+		delete[] temporaryBuffer;
+		delete[] temporaryBuffer2;
+		delete BootSector;
 	}
 
 	uint32_t exFATDriver::ReadFAT(uint32_t cluster)
@@ -261,6 +294,58 @@ namespace exFAT
 			if (metadata->EntryType == ENTRY_END)
 			{
 				break;
+			}
+			else if (metadata->EntryType == ENTRY_ALLOCATION_BITMAP)
+			{
+				BitmapEntry* bitmapEntry = (BitmapEntry*)metadata;
+
+				if ((bitmapEntry->BitmapNumber == 0) && (bitmapEntry1 == nullptr))
+				{
+					bitmapEntry1 = new BitmapEntry();
+					memcpy(bitmapEntry1, bitmapEntry, sizeof(BitmapEntry));
+
+					if ((BootSector->Flags & EX_FAT_USE_SECOND_FAT) == 0)
+					{
+						std::vector<uint32_t> bitmapChain = GetClusterChain(bitmapEntry1->Cluster);
+
+						AllocationBitmap = new uint8_t[bitmapEntry1->Size];
+						memset(AllocationBitmap, 0, bitmapEntry1->Size);
+						uint8_t* ptr = (uint8_t*)AllocationBitmap;
+						for (auto& clus : bitmapChain)
+						{
+							ReadCluster(clus, ptr);
+							ptr += ClusterSize;
+						}
+					}
+				}
+				else if (bitmapEntry2 == nullptr)
+				{
+					bitmapEntry2 = new BitmapEntry();
+					memcpy(bitmapEntry2, bitmapEntry, sizeof(BitmapEntry));
+
+					if ((BootSector->Flags & EX_FAT_USE_SECOND_FAT) == EX_FAT_USE_SECOND_FAT)
+					{
+						std::vector<uint32_t> bitmapChain = GetClusterChain(bitmapEntry2->Cluster);
+
+						AllocationBitmap = new uint8_t[bitmapEntry2->Size];
+						memset(AllocationBitmap, 0, bitmapEntry2->Size);
+						uint8_t* ptr = (uint8_t*)AllocationBitmap;
+						for (auto& clus : bitmapChain)
+						{
+							ReadCluster(clus, ptr);
+							ptr += ClusterSize;
+						}
+					}
+				}
+			}
+			else if (metadata->EntryType == ENTRY_VOLUME_LABEL)
+			{
+				VolumeLabelEntry* volumeEntry = (VolumeLabelEntry*)metadata;
+				
+				for (uint32_t i = 0; i < volumeEntry->Size; i++)
+				{
+					VolumeLabel[i] = (char)volumeEntry->Label[i];
+				}
 			}
 			else if (metadata->EntryType == ENTRY_FILE)
 			{

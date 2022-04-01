@@ -24,6 +24,8 @@ int main()
 
 	exFAT::exFATDriver exFAT("../exFAT/res/exFAT.img");
 
+	std::vector<exFAT::DirEntry> entries = exFAT.GetDirectories(6, 0, false);
+
 	exFAT::DirEntry entry;
 	exFAT.OpenFile("~/kernel.elf", &entry);
 
@@ -35,11 +37,11 @@ int main()
 	FAT32_FolderStructure* root = fat32.GetRoot();
 	FAT32Driver* driver = fat32.GetDriver();
 
-	FAT32_Data data;
+	/*FAT32_Data data;
 	data.name = "test";
 	data.TotalSectors = 100000;
 	FAT32Driver* new_file = FAT32Driver::CreateFAT32(data);
-	delete new_file;
+	delete new_file;*/
 
 	FAT32_OpenFile* file_to_delete = fat32.OpenFile("~/USR/FILES/playlist_file.json");
 	if(file_to_delete) fat32.DeleteFile(file_to_delete);
