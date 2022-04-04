@@ -1,11 +1,15 @@
 ﻿  exFATdriver.cpp
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\exFAT\src\Bitmap.h(18,1): warning C4334: '<<': result of 32-bit shift implicitly converted to 64 bits (was 64-bit shift intended?)
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\exFAT\src\Bitmap.h(28,1): warning C4334: '<<': result of 32-bit shift implicitly converted to 64 bits (was 64-bit shift intended?)
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\exFAT\src\Bitmap.h(57,1): warning C4334: '<<': result of 32-bit shift implicitly converted to 64 bits (was 64-bit shift intended?)
 F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\exFAT\src\exFATdriver.cpp(21,28): warning C4244: '=': conversion from 'uint64_t' to 'uint32_t', possible loss of data
-F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\exFAT\src\exFATdriver.cpp(58,75): warning C4244: 'argument': conversion from 'uint64_t' to 'uint32_t', possible loss of data
-F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\exFAT\src\exFATdriver.cpp(63,75): warning C4244: 'argument': conversion from 'uint64_t' to 'uint32_t', possible loss of data
-F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\exFAT\src\exFATdriver.cpp(219,32): warning C4267: 'initializing': conversion from 'size_t' to 'uint32_t', possible loss of data
-F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\exFAT\src\exFATdriver.cpp(236,36): warning C4267: 'initializing': conversion from 'size_t' to 'uint32_t', possible loss of data
-F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\exFAT\src\exFATdriver.cpp(254,35): warning C4267: 'initializing': conversion from 'size_t' to 'uint32_t', possible loss of data
-F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\exFAT\src\exFATdriver.cpp(359,36): warning C4244: '=': conversion from 'uint16_t' to 'uint8_t', possible loss of data
-F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\exFAT\src\exFATdriver.cpp(368,32): warning C4244: '=': conversion from 'uint64_t' to 'uint32_t', possible loss of data
-F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\exFAT\src\exFATdriver.cpp(641,26): warning C4244: '=': conversion from 'uint64_t' to 'uint32_t', possible loss of data
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\exFAT\src\exFATdriver.cpp(61,82): warning C4244: 'argument': conversion from 'uint64_t' to 'uint32_t', possible loss of data
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\exFAT\src\exFATdriver.cpp(66,82): warning C4244: 'argument': conversion from 'uint64_t' to 'uint32_t', possible loss of data
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\exFAT\src\exFATdriver.cpp(169,18): warning C4244: 'initializing': conversion from 'uint64_t' to 'uint32_t', possible loss of data
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\exFAT\src\exFATdriver.cpp(228,32): warning C4267: 'initializing': conversion from 'size_t' to 'uint32_t', possible loss of data
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\exFAT\src\exFATdriver.cpp(245,36): warning C4267: 'initializing': conversion from 'size_t' to 'uint32_t', possible loss of data
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\exFAT\src\exFATdriver.cpp(263,35): warning C4267: 'initializing': conversion from 'size_t' to 'uint32_t', possible loss of data
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\exFAT\src\exFATdriver.cpp(394,36): warning C4244: '=': conversion from 'uint16_t' to 'uint8_t', possible loss of data
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\exFAT\src\exFATdriver.cpp(403,32): warning C4244: '=': conversion from 'uint64_t' to 'uint32_t', possible loss of data
+F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\exFAT\src\exFATdriver.cpp(861,26): warning C4244: '=': conversion from 'uint64_t' to 'uint32_t', possible loss of data
   exFAT.vcxproj -> F:\Prehistoric - C++\Visual Studio Projects\Projects\FAT32 driver\bin\Debug-windows-x86_64\exFAT\exFAT.lib

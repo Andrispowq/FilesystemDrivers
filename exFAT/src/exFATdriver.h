@@ -6,6 +6,8 @@
 #include <map>
 #include <vector>
 
+#include "Bitmap.h"
+
 namespace exFAT
 {
 	class exFATDriver
@@ -53,6 +55,10 @@ namespace exFAT
 		void GetDirectoriesOnCluster(uint32_t cluster, std::vector<DirEntry>& entries);
 		uint32_t GetClusterFromFilePath(const char* filePath, DirEntry* entry);
 
+		static uint8_t GetMilliseconds();
+		static uint16_t GetTime();
+		static uint16_t GetDate();
+
 	private:
 		std::fstream file;
 
@@ -64,7 +70,7 @@ namespace exFAT
 		 
 		BitmapEntry* bitmapEntry1 = nullptr;
 		BitmapEntry* bitmapEntry2 = nullptr;
-		uint8_t* AllocationBitmap;
+		Bitmap AllocationBitmap;
 
 		exFAT_BootSector* BootSector;
 

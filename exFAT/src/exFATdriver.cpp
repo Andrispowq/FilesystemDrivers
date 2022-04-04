@@ -36,6 +36,9 @@ namespace exFAT
 			file.seekg(BootSector->FATOffset * SectorSize);
 			file.read((char*)FATcache, BootSector->FATLength * SectorSize);
 		}
+
+		std::vector<DirEntry> root;
+		GetDirectoriesOnCluster(BootSector->RootDirectoryCluster, root); //This will initialise the allocation bitmap which is under root
 	}
 
 	exFATDriver::~exFATDriver()
@@ -55,17 +58,23 @@ namespace exFAT
 
 		if (bitmapEntry1)
 		{
-			WriteClusterChain(bitmapEntry1->Cluster, AllocationBitmap, bitmapEntry1->Size);
+			WriteClusterChain(bitmapEntry1->Cluster, AllocationBitmap.buffer, bitmapEntry1->Size);
 		}
 
 		if (bitmapEntry2)
 		{
-			WriteClusterChain(bitmapEntry2->Cluster, AllocationBitmap, bitmapEntry2->Size);
+			WriteClusterChain(bitmapEntry2->Cluster, AllocationBitmap.buffer, bitmapEntry2->Size);
+		}
+
+		if (AllocationBitmap.buffer)
+		{
+			delete[] AllocationBitmap.buffer;
 		}
 
 		delete[] FATcache;
 		delete[] temporaryBuffer;
 		delete[] temporaryBuffer2;
+
 		delete BootSector;
 	}
 
@@ -151,51 +160,50 @@ namespace exFAT
 
 	uint32_t exFATDriver::AllocateClusterChain(uint32_t size)
 	{
-		uint32_t totalAllocated = 0;
+		if (size <= 0)
+		{
+			return 0;
+		}
 
-		uint32_t cluster = 2;
-		uint32_t prevCluster = cluster;
-		uint32_t firstCluster = 0;
-		uint32_t clusterStatus = FREE_CLUSTER;
+		uint32_t totalAllocated = 1;
+		uint32_t start = AllocationBitmap.First();
+		AllocationBitmap.Set(start, true);
+		WriteFAT(start, END_CLUSTER);
+		uint32_t cluster = start;
 
+		//TODO: use allocation bitmap
+		uint64_t index = 0;
 		while (totalAllocated < size)
 		{
-			if (cluster >= TotalClusters)
+			uint32_t next = (uint32_t)AllocationBitmap.First();
+			if (next >= TotalClusters)
 			{
 				return BAD_CLUSTER;
 			}
 
-			clusterStatus = ReadFAT(cluster);
-			if (clusterStatus == FREE_CLUSTER)
+			AllocationBitmap.Set(next, true);
+			uint32_t status = ReadFAT(next);
+			if (status == FREE_CLUSTER)
 			{
-				if (totalAllocated != 0)
+				if (WriteFAT(cluster, next) != 0)
 				{
-					if (WriteFAT(prevCluster, cluster) != 0)
-					{
-						return BAD_CLUSTER;
-					}
-				}
-				else
-				{
-					firstCluster = cluster;
+					return BAD_CLUSTER;
 				}
 
 				if (totalAllocated == (size - 1))
 				{
-					if (WriteFAT(cluster, END_CLUSTER) != 0)
+					if (WriteFAT(next, END_CLUSTER) != 0)
 					{
 						return BAD_CLUSTER;
 					}
 				}
 
 				totalAllocated++;
-				prevCluster = cluster;
+				cluster = next;
 			}
-
-			cluster++;
 		}
 
-		return firstCluster;
+		return start;
 	}
 
 	void exFATDriver::FreeClusterChain(uint32_t start)
@@ -205,6 +213,7 @@ namespace exFAT
 		for (uint32_t i = 0; i < chain.size(); i++)
 		{
 			WriteFAT(chain[i], FREE_CLUSTER);
+			AllocationBitmap.Set(chain[i], false);
 		}
 	}
 
@@ -308,13 +317,26 @@ namespace exFAT
 					{
 						std::vector<uint32_t> bitmapChain = GetClusterChain(bitmapEntry1->Cluster);
 
-						AllocationBitmap = new uint8_t[bitmapEntry1->Size];
-						memset(AllocationBitmap, 0, bitmapEntry1->Size);
-						uint8_t* ptr = (uint8_t*)AllocationBitmap;
+						uint64_t u64size = (bitmapEntry1->Size / sizeof(uint64_t)) + 1;
+						uint64_t allocSize = u64size * sizeof(uint64_t);
+						AllocationBitmap.buffer = new uint64_t[u64size];
+						AllocationBitmap.size = u64size;
+						memset(AllocationBitmap.buffer, 0, allocSize);
+						uint8_t* ptr = (uint8_t*)AllocationBitmap.buffer;
 						for (auto& clus : bitmapChain)
 						{
-							ReadCluster(clus, ptr);
+							if (allocSize > ClusterSize)
+							{
+								ReadCluster(clus, ptr);
+							}
+							else
+							{
+								ReadCluster(clus, temporaryBuffer);
+								memcpy(ptr, temporaryBuffer, allocSize);
+							}
+
 							ptr += ClusterSize;
+							allocSize -= ClusterSize;
 						}
 					}
 				}
@@ -327,13 +349,26 @@ namespace exFAT
 					{
 						std::vector<uint32_t> bitmapChain = GetClusterChain(bitmapEntry2->Cluster);
 
-						AllocationBitmap = new uint8_t[bitmapEntry2->Size];
-						memset(AllocationBitmap, 0, bitmapEntry2->Size);
-						uint8_t* ptr = (uint8_t*)AllocationBitmap;
+						uint64_t u64size = (bitmapEntry2->Size / sizeof(uint64_t)) + 1;
+						uint64_t allocSize = u64size * sizeof(uint64_t);
+						AllocationBitmap.buffer = new uint64_t[u64size];
+						AllocationBitmap.size = u64size;
+						memset(AllocationBitmap.buffer, 0, allocSize);
+						uint8_t* ptr = (uint8_t*)AllocationBitmap.buffer;
 						for (auto& clus : bitmapChain)
 						{
-							ReadCluster(clus, ptr);
+							if (allocSize > ClusterSize)
+							{
+								ReadCluster(clus, ptr);
+							}
+							else
+							{
+								ReadCluster(clus, temporaryBuffer);
+								memcpy(ptr, temporaryBuffer, allocSize);
+							}
+
 							ptr += ClusterSize;
+							allocSize -= ClusterSize;
 						}
 					}
 				}
@@ -439,6 +474,41 @@ namespace exFAT
 		return active_cluster;
 	}
 
+	uint8_t exFATDriver::GetMilliseconds()
+	{
+		return 0; //Currently not implemented
+	}
+
+	uint16_t exFATDriver::GetTime()
+	{
+		time_t rawtime;
+		struct tm* timeinfo;
+
+		time(&rawtime);
+		timeinfo = localtime(&rawtime);
+
+		uint16_t sec_over_2 = timeinfo->tm_sec / 2;
+		uint16_t min = timeinfo->tm_min;
+		uint16_t hour = timeinfo->tm_hour;
+
+		return sec_over_2 | (min << 5) | (hour << 11);
+	}
+
+	uint16_t exFATDriver::GetDate()
+	{
+		time_t rawtime;
+		struct tm* timeinfo;
+
+		time(&rawtime);
+		timeinfo = localtime(&rawtime);
+
+		uint16_t day = timeinfo->tm_mday;
+		uint16_t mon = timeinfo->tm_mon + 1;
+		uint16_t year = timeinfo->tm_year + 1900;
+
+		return day | (mon << 5) | ((year - 1980) << 9);
+	}
+
 	std::vector<DirEntry> exFATDriver::GetDirectories(uint32_t cluster, uint32_t filter_attributes, bool exclude)
 	{
 		std::vector<DirEntry> ret;
@@ -475,10 +545,160 @@ namespace exFAT
 
 	void exFATDriver::ModifyDirectoryEntry(uint32_t cluster, const char* name, DirEntry modified)
 	{
+		if (cluster < 2 || cluster > TotalClusters)
+		{
+			return;
+		}
+
+		ReadCluster(cluster, temporaryBuffer);
+
+		FileEntryGeneral* metadata = (FileEntryGeneral*)temporaryBuffer;
+		uint32_t meta_pointer_iterator = 0;
+
+		DirEntry nextFile;
+		memset(&nextFile, 0, sizeof(DirEntry));
+
+		uint32_t currentNameLength = 0;
+		uint32_t nameLength = 0;
+		uint32_t secondaryEntries = 0;
+		uint32_t secondaryEntryCount = 0;
+
+		while (true)
+		{
+			if (metadata->EntryType == ENTRY_END)
+			{
+				break;
+			}
+			else if (metadata->EntryType == ENTRY_FILE)
+			{
+				FileEntry* fileEntry = (FileEntry*)metadata;
+				secondaryEntryCount = fileEntry->SecondaryEntries;
+
+				if (modified.attributes == 0)
+				{
+					//We want to delete the entry altogether
+					memset(fileEntry, 0, sizeof(FileEntry));
+				}
+				else
+				{
+					//metadata->attributes = modified.attributes;
+					//metadata->clusterLow = modified.cluster & 0xFFFF;
+					//metadata->clusterHigh = (modified.cluster << 16) & 0xFFFF;
+					//metadata->fileSize = modified.size;
+				}
+			}
+			else if (metadata->EntryType == ENTRY_STREAM)
+			{
+				if (modified.attributes == 0)
+				{
+					//We want to delete the entry altogether
+					memset(metadata, 0, sizeof(FileEntry));
+				}
+				else
+				{
+					//metadata->attributes = modified.attributes;
+					//metadata->clusterLow = modified.cluster & 0xFFFF;
+					//metadata->clusterHigh = (modified.cluster << 16) & 0xFFFF;
+					//metadata->fileSize = modified.size;
+				}
+
+				secondaryEntries++;
+			}
+			else if (metadata->EntryType == ENTRY_FILENAME)
+			{
+				if (modified.attributes == 0)
+				{
+					//We want to delete the entry altogether
+					memset(metadata, 0, sizeof(FileEntry));
+				}
+				else
+				{
+					//metadata->attributes = modified.attributes;
+					//metadata->clusterLow = modified.cluster & 0xFFFF;
+					//metadata->clusterHigh = (modified.cluster << 16) & 0xFFFF;
+					//metadata->fileSize = modified.size;
+				}
+
+				secondaryEntries++;
+
+				if (secondaryEntries == secondaryEntryCount)
+				{
+					WriteCluster(cluster, temporaryBuffer);
+					break;
+				}
+			}
+
+			metadata++;
+			meta_pointer_iterator++;
+		}
 	}
 
 	int exFATDriver::PrepareAddedDirectory(uint32_t cluster)
 	{
+		/*if (cluster < 2 || cluster > TotalClusters)
+		{
+			return -1;
+		}
+
+		char* tempBuff = new char[ClusterSize];
+		ReadCluster(cluster, tempBuff);
+
+		FileEntry* fileEntry = (FileEntry*)tempBuff;
+		memset(fileEntry, 0, sizeof(FileEntry));
+		fileEntry->SecondaryEntries = 2;
+		fileEntry->Checksum = 0; //Set later
+		fileEntry->FileAttributes = FILE_DIRECTORY;
+		
+		fileEntry->CreationTime = (((uint32_t)GetDate() << 16) | GetTime());
+		fileEntry->ModificationTime = (((uint32_t)GetDate() << 16) | GetTime());
+		fileEntry->AccessTime = (((uint32_t)GetDate() << 16) | GetTime());
+
+		fileEntry->CreationMilliseconds = GetMilliseconds();
+		fileEntry->ModificationMilliseconds = GetMilliseconds();
+		fileEntry->CreationUTC = 0;
+		fileEntry->ModificationUTC = 0;
+		fileEntry->AccessUTC = 0;
+
+		StreamEntry* streamEntry = (StreamEntry*)(fileEntry + 1);
+		memset(streamEntry, 0, sizeof(StreamEntry));
+		streamEntry->SecondaryFlags;
+		streamEntry->NameLength;
+
+		streamEntry->NameHash;
+
+		streamEntry->ValidDataLength;
+		streamEntry->FirstCluster;
+
+		streamEntry->DataLength;
+
+		memset(metadata, 0, sizeof(DirectoryEntry));
+		memcpy(metadata->name, ".          ", 11);
+		metadata->attributes = FILE_DIRECTORY;
+		metadata->clusterLow = cluster & 0xFFFF;
+		metadata->clusterHigh = (cluster >> 16) & 0xFFFF;
+
+		metadata->ctime_date = GetDate();
+		metadata->ctime_time = GetTime();
+		metadata->ctime_ms = GetMilliseconds();
+		metadata->atime_date = GetDate();
+		metadata->mtime_date = GetDate();
+		metadata->mtime_time = GetTime();
+
+		metadata++;
+		memset(metadata, 0, sizeof(DirectoryEntry));
+		memcpy(metadata->name, "..         ", 11);
+		metadata->attributes = FILE_DIRECTORY;
+
+		metadata->ctime_date = GetDate();
+		metadata->ctime_time = GetTime();
+		metadata->ctime_ms = GetMilliseconds();
+		metadata->atime_date = GetDate();
+		metadata->mtime_date = GetDate();
+		metadata->mtime_time = GetTime();
+
+		WriteCluster(cluster, tempBuff);
+		delete[] tempBuff;*/
+
 		return 0;
 	}
 

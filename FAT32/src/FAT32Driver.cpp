@@ -1,5 +1,7 @@
 #include "FAT32Driver.h"
 
+#include <string>
+
 FAT32Driver::FAT32Driver(const std::string& image)
 {
 	file.open(image, std::ios::in | std::ios::out | std::ios::binary);
@@ -592,36 +594,40 @@ int FAT32Driver::DirectoryAdd(uint32_t cluster, DirEntry file)
 			ent->mtime_time = GetTime();
 
 			//For now we assume that the long entries fit in one cluster, let's hope it's true
-			uint32_t clust_size = ent->fileSize / ClusterSize;
-			if ((clust_size * ClusterSize) != ClusterSize)
+			if (file.name[0] != '.') //The DirEntry may be a dot entry
 			{
-				clust_size++;
+				uint32_t clust_size = ent->fileSize / ClusterSize;
+				if ((clust_size * ClusterSize) != ClusterSize)
+				{
+					clust_size++;
+				}
+
+				uint32_t new_cluster = AllocateClusterChain(clust_size);
+				if (new_cluster == BAD_CLUSTER)
+				{
+					return -1;
+				}
+
+				char* buffer = new char[clust_size * ClusterSize];
+				memset(buffer, 0, clust_size * ClusterSize);
+				WriteClusterChain(new_cluster, buffer, clust_size * ClusterSize);
+
+				if ((ent->attributes & FILE_DIRECTORY) == FILE_DIRECTORY) //A directory with pre-allocated clusters will definitely not need to be prepared
+				{
+					PrepareAddedDirectory(new_cluster);
+				}
+
+				ent->clusterLow = new_cluster & 0xFFFF;
+				ent->clusterHigh = (new_cluster >> 16) & 0xFFFF;
 			}
-
-			uint32_t new_cluster = AllocateClusterChain(clust_size);
-			if (new_cluster == BAD_CLUSTER)
-			{
-				return -1;
-			}
-
-			char* buffer = new char[clust_size * ClusterSize];
-			memset(buffer, 0, clust_size * ClusterSize);
-			WriteClusterChain(new_cluster, buffer, clust_size * ClusterSize);
-
-			if ((ent->attributes & FILE_DIRECTORY) == FILE_DIRECTORY)
-			{
-				PrepareAddedDirectory(new_cluster);
-			}
-
-			ent->clusterLow = new_cluster & 0xFFFF;
-			ent->clusterHigh = (new_cluster >> 16) & 0xFFFF;
-
+			
 			memcpy(metadata - count, ent - count, sizeof(DirectoryEntry) * (count + 1));
 			WriteCluster(cluster, temporaryBuffer); //Write the modified stuff back
 
 			return 0;
 		}
 	}
+
 	return -1;
 }
 
@@ -1409,9 +1415,32 @@ FAT32Driver* FAT32Driver::CreateFAT32(FAT32_Data data)
 	}
 
 	FAT32Driver* driver = new FAT32Driver("../FAT32/res/" + data.name + ".img"); //Now the FAT is almost complete for use, lets add some necessary stuff
+	
+	char volLabel[11] = { ' ' };
+	if ((data.TotalSectors * data.BytesPerSector) < (10 * 1024 * 1024)) //If less than 10MBs
+	{
+		uint32_t kbs = (data.TotalSectors * data.BytesPerSector) / 1024;
+		std::string str = std::to_string(kbs);
+		str += "KB";
+		memcpy(volLabel, &str[0], str.length());
+	}
+	else if (uint64_t(data.TotalSectors * data.BytesPerSector) < uint64_t(10ui64 * 1024 * 1024 * 1024)) //If less than 10GBs
+	{
+		uint32_t mbs = (data.TotalSectors * data.BytesPerSector) / (1024 * 1024);
+		std::string str = std::to_string(mbs);
+		str += "MB";
+		memcpy(volLabel, &str[0], str.length());
+	}
+	else
+	{
+		uint32_t gbs = (data.TotalSectors * data.BytesPerSector) / (1024 * 1024 * 1024);
+		std::string str = std::to_string(gbs);
+		str += "GB";
+		memcpy(volLabel, &str[0], str.length());
+	}
 
 	DirEntry volumeID;
-	memcpy(volumeID.name, "256MB", 18);
+	memcpy(volumeID.name, volLabel, 11);
 	volumeID.attributes = FILE_VOLUME_ID;
 	volumeID.size = 0;
 	ret = driver->CreateFile("~/", &volumeID);

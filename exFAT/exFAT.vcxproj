@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\Bitmap.h" />
     <ClInclude Include="src\exFATdefs.h" />
     <ClInclude Include="src\exFATdriver.h" />
   </ItemGroup>
